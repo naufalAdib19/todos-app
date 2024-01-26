@@ -1,0 +1,26 @@
+<ul class="flex flex-col gap-y-1 mt-2">
+  <li class="flex justify-between px-3 py-2 rounded cursor-pointer">
+    <div class="flex gap-x-3 items-center">
+      <ng-icon name="ionChevronForwardOutline"></ng-icon>
+      <p>Upcoming</p>
+    </div>
+    <p>0</p>
+  </li>
+  <li class="flex justify-between px-3 py-2 rounded cursor-pointer">
+    <div class="flex gap-x-3 items-center">
+      <ng-icon name="ionSunnyOutline"></ng-icon>
+      <p>Todays</p>
+    </div>
+    <p>0</p>
+  </li>
+  <li
+    class="flex justify-between px-3 py-2 rounded cursor-pointer"
+    [class]="getPath() === '/' ? 'bg-secondary text-secondary-content' : ''"
+  >
+    <div class="flex gap-x-3 items-center">
+      <ng-icon name="ionListOutline"></ng-icon>
+      <p>Sticky Wall</p>
+    </div>
+    <p>0</p>
+  </li>
+</ul>
