@@ -1,0 +1,59 @@
+<div>
+  <form
+    action=""
+    class="flex flex-col gap-y-6"
+    [formGroup]="noteForms"
+    (submit)="onSubmitForm()"
+  >
+    <div>
+      <label for="title" class="text-lg font-semibold">TITLE</label>
+      <input
+        name="title"
+        type="text"
+        class="border-b-2 border-base-300 focus:border-secondary py-2 duration-300"
+        placeholder="your title..."
+        formControlName="title"
+      />
+    </div>
+    <div>
+      <label for="notes" class="text-lg font-semibold">NOTES</label>
+      <textarea
+        name="notes"
+        rows="5"
+        class="border-b-2 border-base-300 focus:border-secondary duration-300 mt-2"
+        placeholder="your notes..."
+        formControlName="content"
+      ></textarea>
+    </div>
+    <div>
+      <label for="type" class="text-lg font-semibold">TYPES</label>
+      <select
+        name="type"
+        class="border-b border-base-300 py-2"
+        formControlName="type"
+      >
+        <option value="personal">Personal</option>
+        <option value="work">Work</option>
+        <option value="hangout">Hangout</option>
+      </select>
+    </div>
+    <div>
+      <label for="date" class="text-lg font-semibold">DATE FINISHED</label>
+      <input
+        type="date"
+        name="date"
+        class="py-2 border-b border-base-300"
+        formControlName="dateFinished"
+      />
+    </div>
+    <div class="flex items-end">
+      <button
+        class="btn btn-primary font-bold text-primary-content rounded-md w-fit px-7 my-3"
+        type="submit"
+        [disabled]="isLoading"
+      >
+        SUBMIT
+      </button>
+    </div>
+  </form>
+</div>

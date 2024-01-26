@@ -8,4 +8,7 @@ import { TopbarComponent } from './components/organisms/topbar/topbar.component'
 })
 export class AppComponent {
   title = 'notes-app';
+  notifyOptions: {} = {
+    position: ['top', 'right'],
+  };
 }

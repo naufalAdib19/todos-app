@@ -15,4 +15,8 @@ export class NoteService {
   getNotes(): Observable<CardModels[]> {
     return this.http.get<CardModels[]>(this.baseURL);
   }
+
+  addNotes(datas: any) {
+    return this.http.post(this.baseURL, datas);
+  }
 }
