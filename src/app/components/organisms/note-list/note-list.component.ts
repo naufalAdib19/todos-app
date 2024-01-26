@@ -4,11 +4,12 @@ import { CardModels } from '../../../models/card-models';
 import { NoteService } from '../../../services/note-service';
 import { finalize, pipe } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { DeleteCardDialogsComponent } from '../../molecules/delete-card-dialogs/delete-card-dialogs.component';
 
 @Component({
   selector: 'note-list',
   standalone: true,
-  imports: [CardComponent, CommonModule],
+  imports: [CardComponent, CommonModule, DeleteCardDialogsComponent],
   templateUrl: './note-list.component.html',
   styleUrl: './note-list.component.css',
 })

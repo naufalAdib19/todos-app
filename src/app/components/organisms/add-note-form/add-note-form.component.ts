@@ -5,11 +5,12 @@ import { NoteService } from '../../../services/note-service';
 import { finalize } from 'rxjs';
 import { NotificationsService } from 'angular2-notifications';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'add-note-form',
   standalone: true,
-  imports: [ReactiveFormsModule, FormsModule],
+  imports: [ReactiveFormsModule, FormsModule, CommonModule],
   templateUrl: './add-note-form.component.html',
   styleUrl: './add-note-form.component.css',
 })

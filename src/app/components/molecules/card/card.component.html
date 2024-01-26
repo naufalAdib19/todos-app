@@ -7,7 +7,11 @@
       <button class="btn btn-outline btn-success text-success-content">
         UPDATE
       </button>
-      <button class="btn btn-outline btn-error text-error-content">
+      <button
+        class="btn btn-outline btn-error text-error-content"
+        onclick="my_modal_1.showModal()"
+        (click)="onDeleteClick()"
+      >
         DELETE
       </button>
     </div>

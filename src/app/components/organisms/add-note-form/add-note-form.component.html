@@ -52,6 +52,7 @@
         type="submit"
         [disabled]="isLoading"
       >
+        <span *ngIf="isLoading" class="loading loading-spinner"></span>
         SUBMIT
       </button>
     </div>
