@@ -1,1 +1,15 @@
-<p>card works!</p>
+<div [class]="getBgColor()" class="card w-96 shadow-xl">
+  <div class="card-body">
+    <h2 class="card-title">{{ title }}</h2>
+    <p class="italic">{{ convertDateToString() }}</p>
+    <p class="my-3">{{ content }}</p>
+    <div class="card-actions justify-end flex gap-x-3">
+      <button class="btn btn-outline btn-success text-success-content">
+        UPDATE
+      </button>
+      <button class="btn btn-outline btn-error text-error-content">
+        DELETE
+      </button>
+    </div>
+  </div>
+</div>

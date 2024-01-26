@@ -3,7 +3,7 @@ import { ByDateListsComponent } from '../../molecules/by-date-lists/by-date-list
 import { ByTypeListsComponent } from '../../molecules/by-type-lists/by-type-lists.component';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { ionAddOutline, ionMenuOutline } from '@ng-icons/ionicons';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'sidebar',
   templateUrl: './sidebar.component.html',
@@ -12,4 +12,10 @@ import { ionAddOutline, ionMenuOutline } from '@ng-icons/ionicons';
   imports: [ByDateListsComponent, ByTypeListsComponent, NgIconComponent],
   viewProviders: [provideIcons({ ionAddOutline, ionMenuOutline })],
 })
-export class SidebarComponent {}
+export class SidebarComponent {
+  constructor(private router: Router) {}
+
+  onAddNotesClick(): void {
+    this.router.navigate(['add-notes']);
+  }
+}
