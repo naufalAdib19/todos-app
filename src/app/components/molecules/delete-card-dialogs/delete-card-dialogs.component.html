@@ -2,10 +2,17 @@
   <div class="modal-box">
     <h3 class="font-bold text-lg text-error">DELETE NOTES!</h3>
     <p class="py-4">Are you sure wanna delete the notes?</p>
-    <div class="modal-action flex gap-x-1">
-      <button class="btn btn-error text-error-content">DELETE</button>
-      <form method="dialog">
+    <p>{{ getIdCardDeleted() }}</p>
+    <div class="modal-action">
+      <form method="dialog" class="flex gap-x-3">
         <button class="btn btn-success text-success-content">CANCEL</button>
+        <button
+          class="btn btn-error text-error-content"
+          (click)="onDeleteClick()"
+          onclick=""
+        >
+          DELETE
+        </button>
       </form>
     </div>
   </div>

@@ -19,4 +19,8 @@ export class NoteService {
   addNotes(datas: any) {
     return this.http.post(this.baseURL, datas);
   }
+
+  deleteNotes(idCard: String) {
+    return this.http.delete(this.baseURL.concat(`/${idCard}`));
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, Input, Output } from '@angular/core';
 import { CardModels, CardActions } from '../../../models/card-models';
+import { GetIdCardService } from '../../../services/get-id-card';
 
 @Component({
   selector: 'card',
@@ -16,6 +17,8 @@ export class CardComponent implements CardModels, CardActions {
   @Input() dateFinished!: Date;
   @Input() id!: String;
 
+  constructor(private getIdCardService: GetIdCardService) {}
+
   convertDateToString(): String {
     return new Date(this.dateCreated).toDateString();
   }
@@ -29,7 +32,9 @@ export class CardComponent implements CardModels, CardActions {
     return typeNotes[this.type as keyof typeof typeNotes];
   }
 
-  onDeleteClick(): void {}
+  onDeleteClick(): void {
+    this.getIdCardService.setIdCards(this.id);
+  }
 
   onDetailClidk(): void {}
 
