@@ -3,31 +3,46 @@
     action=""
     class="flex flex-col gap-y-6"
     [formGroup]="noteForms"
-    (submit)="onSubmitForm()"
+    (ngSubmit)="onSubmitForm()"
   >
     <div>
       <label for="title" class="text-lg font-semibold">TITLE</label>
       <input
+        [class]="
+          validationForms.title.isValid ? 'border-error focus:border-error' : ''
+        "
         name="title"
         type="text"
         class="border-b-2 border-base-300 focus:border-secondary py-2 duration-300"
         placeholder="your title..."
         formControlName="title"
       />
+      <p *ngIf="validationForms.title.isValid" class="text-error">
+        {{ validationForms.title.theMessage }}
+      </p>
     </div>
     <div>
       <label for="notes" class="text-lg font-semibold">NOTES</label>
       <textarea
+        [class]="
+          validationForms.content.isValid
+            ? 'border-error focus:border-error'
+            : ''
+        "
         name="notes"
         rows="5"
         class="border-b-2 border-base-300 focus:border-secondary duration-300 mt-2"
         placeholder="your notes..."
         formControlName="content"
       ></textarea>
+      <p *ngIf="validationForms.content.isValid" class="text-error">
+        {{ validationForms.content.theMessage }}
+      </p>
     </div>
     <div>
       <label for="type" class="text-lg font-semibold">TYPES</label>
       <select
+        [class]="validationForms.type.isValid ? 'border-error' : ''"
         name="type"
         class="border-b border-base-300 py-2"
         formControlName="type"
@@ -37,14 +52,25 @@
         <option value="hangout">Hangout</option>
       </select>
     </div>
+    <p *ngIf="validationForms.type.isValid" class="text-error">
+      {{ validationForms.type.theMessage }}
+    </p>
     <div>
       <label for="date" class="text-lg font-semibold">DATE FINISHED</label>
       <input
+        [class]="
+          validationForms.dateFinished.isValid
+            ? 'border-error focus:border-error'
+            : ''
+        "
         type="date"
         name="date"
         class="py-2 border-b border-base-300"
         formControlName="dateFinished"
       />
+      <p *ngIf="validationForms.dateFinished.isValid" class="text-error">
+        {{ validationForms.dateFinished.theMessage }}
+      </p>
     </div>
     <div class="flex items-end">
       <button
